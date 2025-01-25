@@ -22,7 +22,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
+  height: calc(100vh - env(safe-area-inset-bottom));
   background: linear-gradient(270deg, #a24bcf, #4b79cf, #4bc5cf);
   background-size: 600% 600%;
   -webkit-animation: animation 30s ease infinite;
