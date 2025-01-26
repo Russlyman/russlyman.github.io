@@ -13,139 +13,134 @@ a {
   text-decoration: none;
 }
 
-html {
+html,
+body {
+  height: 100%;
+
   font-family: 'Inter', sans-serif;
   color: #212529;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* height: 100vh; */
-  height: calc(100vh - env(safe-area-inset-bottom));
-  background: linear-gradient(270deg, #a24bcf, #4b79cf, #4bc5cf);
-  background-size: 600% 600%;
-  -webkit-animation: animation 30s ease infinite;
-  -moz-animation: animation 30s ease infinite;
-  animation: animation 30s ease infinite;
-}
-
-.profile {
+.card {
+  height: 100%;
   background-color: #dee2e6;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem;
-  border-radius: 10px;
-  animation: 0.75s ease-out 0s 1 slideDown;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  justify-content: center;
 }
 
-/* Box Shadow pinched from: https://www.w3schools.com/css/css3_shadows_box.asp */
-
-.profile-img {
+.card img {
   width: 250px;
   border-radius: 50%;
   margin-bottom: 40px;
 }
 
-.profile-name {
+.card h1 {
   font-size: 33px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-.profile-job {
-  font-size: 23px;
+.card p {
+  font-size: 19px;
   margin-bottom: 40px;
 }
 
-.social-list {
-  font-size: 25px;
+.card ul {
   display: flex;
   gap: 1rem;
+
+  font-size: 25px;
 }
 
-.social-list-item {
-  background-color: #212529;
-  padding: 0.75rem;
+.card a {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 0.75rem;
   border-radius: 50%;
+
+  background-color: #212529;
   color: #dee2e6;
-  transition: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
 }
 
-.social-list-item:hover {
-  background-color: #495057;
-}
-
-/* https://www.gradient-animator.com/ */
-@-webkit-keyframes animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@-moz-keyframes animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@keyframes animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* https://stackoverflow.com/questions/6805482/css3-transition-animation-on-load */
-
-@keyframes slideDown {
-  0% {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .profile {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    border-radius: 0;
+@media only screen and (min-width: 600px) {
+  body {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    animation: none;
+
+    background: linear-gradient(270deg, #a24bcf, #4b79cf, #4bc5cf);
+    background-size: 600% 600%;
+    -webkit-animation: animation 30s ease infinite;
+    -moz-animation: animation 30s ease infinite;
+    animation: animation 30s ease infinite;
   }
 
-  .social-list-item {
-    transition: none;
+  .card {
+    height: auto;
+    padding: 3rem;
+    border-radius: 10px;
+    animation: 0.5s ease-out 0s 1 slideDown;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  .social-list-item:hover {
-    background-color: #212529;
+  .card a {
+    transition: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .card a:hover {
+    background-color: #495057;
+  }
+
+  /* https://www.gradient-animator.com/ */
+  @-webkit-keyframes animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @-moz-keyframes animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* https://stackoverflow.com/questions/6805482/css3-transition-animation-on-load */
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 }
